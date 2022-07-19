@@ -99,8 +99,8 @@ main{
   width: 20%;
 }
 .btn-field{
-  margin-top: 50px;
-  padding-bottom: 50px;
+  margin-top: 60px;
+  padding: 20px 0;
   background: var(--primery-color);
 }
 .match-btn{
@@ -261,20 +261,19 @@ footer .social-media .fa-brands{
 
 
 
-
+/* ============< Start Media Query For Mobile Screen >============= */
 
 
 
 @media screen and (max-width: 576px) {
   
-  body{
-    background: #00dda9;
-  }
+
 
   header{
       width: 100%;
       height: 100vh;
       flex-direction: column;
+      border-radius: 0;
     }
 
   .text-side{
@@ -349,6 +348,7 @@ footer{
 
 
 footer h1{
+  left: 47%;
   top: 10%;
 }
 
@@ -377,7 +377,168 @@ footer .social-media {
   left: 30%;
 }
 
+}
+
+/* ============< End Media Query For Mobile Screen >============= */
+
+
+/* ============< Start Media Query For Tab Screen >============= */
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+
+
+    header {
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      border-radius: 0;
+    }
+  
+    .text-side {
+      width: 100%;
+    }
+  
+    .text-side h2 {
+      margin-top: 10px;
+      font-size: 20px;
+      margin-left: 70px;
+    }
+  
+    .text-side .heading {
+      margin-top: 10px;
+      margin-left: 70px;
+    }
+  
+    .text-side .heading-description {
+      margin-left: 70px;
+      margin-top: 10px;
+      font-size: 18px;
+    }
+  
+    .text-side .baner-btn {
+      margin-left: 80px;
+    }
+  
+    .banar-side {
+      width: 100%;
+    }
+  
+    .player {
+      margin-top: 40px;
+      width: 300px;
+      height: 350px;
+    }
+  
+    main {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .col-left {
+      margin-left: 30%;
+  
+    }
+  
+    .btn-field {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      background: transparent;
+      margin-left: -20px;
+    }
+
+    
+   
+  
+    .col-right {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-left: 10%;
+    }
+  
+    .col-right .cols {
+      border: 1px solid transparent;
+      margin-bottom: 10px;
+    }
+    .col-9{
+      display: none;
+    }
+  
+    .col-right .cols:hover {
+      margin-top: 0px;
+      box-shadow: none;
+      border: 1px solid var(--primery-color);
+    }
+  
+    footer {
+      height: 100vh;
+    }
+  
+  
+    footer h1 {
+      left: 37%;
+      top: 10%;
+    }
+  
+    footer hr {
+      width: 500px;
+      top: 20%;
+      left: 20%;
+    }
+  
+    footer .settings {
+      display: flex;
+      flex-direction: column;
+      top: 30%;
+    }
+  
+    footer .settings a {
+      text-decoration: none;
+      margin-top: 30px;
+      text-align: center;
+      margin-left: 130px;
+    }
+  
+    footer .social-media {
+      position: absolute;
+      top: 90%;
+      left: 30%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 }
+/* ============< End Media Query For Tab Screen >============= */
