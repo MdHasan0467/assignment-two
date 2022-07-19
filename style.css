@@ -1,7 +1,13 @@
+  /* =========< Google Fonts >========= */
+  
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Tiro+Tamil&display=swap');
+  
+  
   *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
   }
   
   :root{
@@ -136,6 +142,8 @@
     background: var(--primery-color);
   }
   .match-btn{
+    font-family: sans-serif;
+    font-weight: 400;
     text-decoration: none;
     font-size: 18px;
     display: block;
@@ -145,7 +153,7 @@
     margin-left: 40px;
     width: 150px;
     height: 50px;
-    border-radius: 12px;
+    border-radius: 10px;
     border: 1px solid var(--secondary-color);
     background: var(--white-color);
     color: var(--primery-color);
