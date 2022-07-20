@@ -37,102 +37,58 @@
     display: flex;
     background: var(--primery-color);
     border-radius: 16px;
+    position: relative;
   }
   
   .text-side{
     width: 50%;
   }
   
-  
-  .text-side h2{
+
+  .text-side .heading{
+    margin-left: 80px;
+    margin-top: 20px;
+    font-size: 40px;
     color: var(--white-color);
-    margin-left: 100px;
-    margin-top: 10%;
-    font-size: 26px;
     position: relative;
     z-index: 1;
   }
 
-.text-side h2::before,
-.text-side h2::after {
-
-  content: ' ';
-  padding: 30px;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  display: block;
-  transform: translateX(-50%) translateY(-50%) rotate(0);
-
-  animation: spin 6s alternate infinite ease-in-out;
-}
-
-.text-side h2::before {
-  border-top: 10px solid #ff126d;
-  border-left: 10px solid #ff126d;
-  z-index: -1;
-
-}
-
-.text-side h2::after {
-  border-bottom: 10px solid #ff126d;
-  border-right: 10px solid #ff126d;
-  z-index: -1;
-
-}
-
-@keyframes spin {
-  100% {
+  .text-side .heading::before,
+  .text-side .heading::after {
+  
+    content: ' ';
+    padding: 30px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: block;
+    transform: translateX(-50%)translateY(-50%) rotate(0);
+    animation: spin 6s alternate infinite ease-in-out;
+  }
+  
+  .text-side .heading::before {
+    border-top: 10px solid #ff126d;
+    border-left: 10px solid #ff126d;
+    z-index: -1;
+  
+  }
+  
+  .text-side .heading::after {
+    border-bottom: 10px solid #ff126d;
+    border-right: 10px solid #ff126d;
+     z-index: -1;
+  }
+  
+  @keyframes spin {
+    100% {
     transform: translateX(-50%) translateY(-50%) rotate(360deg);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
-  .text-side .heading{
-    width: 0ch;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 10s steps(22) infinite alternate;
-    border-right: 3px solid black;
-    background: transparent;
-    border: 1px solid transparent;
-    padding: 3px;
-    margin-left: 100px;
-    margin-top: 20px;
-    font-size: 40px;
-    color: var(--button-color);
-  }
-  
-  @keyframes typing {
-    0% {
-      width: 0ch;
-    }
-  
-    50% {
-      width: 22ch;
-    }
-  }
+
   .text-side .heading-description {
-    color: var(--white-color);
+    color: var(--secondary-color);
     margin-left: 100px;
     margin-top: 20px;
     font-size: 20px;
@@ -153,6 +109,9 @@
     justify-content: center;
   }
   .player{
+    position: absolute;
+    right: 10%;
+    bottom: 0;
     width: 400px;
     height: 495px;
   }
@@ -432,57 +391,56 @@
 /* ============< Start Media Query For Mobile Screen >============= */
 
 @media screen and (min-width:320px) and (max-width: 480px) {
+ 
+ 
   
   header{
     width: 100%;
     height: 80vh;
     flex-direction: column;
     border-radius: 0;
+    position: relative;
   }
 
   .text-side{
       width: 100%;
   }
 
-  .text-side h2 {
-    margin-top: 10px;
-    font-size: 20px;
-    margin-left: 20px;
-   }
-
-     .text-side h2::before,
-     .text-side h2::after {
-       padding: 13px;
-     }
-  
-     .text-side h2::before {
-       border-top: 3px solid #ff126d;
-       border-left: 3px solid #ff126d;
-       z-index: -1;
-     }
-  
-     .text-side h2::after {
-       border-bottom: 3px solid #ff126d;
-       border-right: 3px solid #ff126d;
-       z-index: -1;
-  
-     }
 
   .text-side .heading {
     font-size: 20px;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 26px;
+  }
+
+  .text-side .heading::before,
+  .text-side .heading::after {
+    padding: 13px;
+  }
+      
+  .text-side .heading::before {
+    border-top: 3px solid #DD0000;
+    border-left: 3px solid #DD0000;
+    z-index: -1;
+  }
+      
+  .text-side .heading::after {
+    border-bottom: 3px solid #DD0000;
+    border-right: 3px solid #DD0000;
+    z-index: -1;
   }
 
   .text-side .heading-description {
     margin-left: 20px;
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 17px;
   }
 
   .text-side .baner-btn {
     font-size: 13px;
-    margin-left: 200px;
+    position: absolute;
+    top: 40%;
+    right: 25%;
   }
 
   .banar-side {
@@ -490,7 +448,10 @@
   }
   
   .player{
-    margin-top: 100px;
+    display: block;
+    position: absolute;
+    left: 6%;
+    bottom: 0;
     width: 300px;
     height: 350px;
   }
@@ -512,8 +473,10 @@
   
   .col-right{
     width: 100%;
-    grid-template-columns: repeat(1,1fr);
-    margin-left: 20%;
+    grid-template-columns: repeat(1,300px);
+    justify-content: center;
+    gap: 50px;
+    margin-left: 0;
   }
   .col-right .cols{
     border: 1px solid transparent;
@@ -563,7 +526,7 @@
     left: 20%;
   }
   
-  }
+}
   
   /* ============< End Media Query For Mobile Screen >============= */
   
@@ -587,154 +550,150 @@
 
   /* ============< Start Media Query For Tab Screen >============= */
 
-  @media screen and (min-width: 576px) and (max-width: 991px) {
+  @media screen and (min-width: 481px) and (max-width: 768px) {
 
-
-    header {
-      width: 100%;
-      height: 100vh;
-      flex-direction: column;
-      border-radius: 0;
-    }
+   
+  header {
+    width: 100%;
+    height: 80vh;
+    flex-direction: column;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+  }
   
-    .text-side {
-      width: 100%;
-    }
+  .text-side {
+    width: 100%;
+  }
   
-    .text-side h2 {
-      margin-top: 10px;
-      font-size: 20px;
-      margin-left: 70px;
-    }
 
+  .text-side .heading::before,
+  .text-side .heading::after {
+    padding: 20px;
+  }
 
-    .text-side h2::before,
-    .text-side h2::after {
-      padding: 15px;
-     }
-
-     .text-side h2::before {
-        border-top: 5px solid #ff126d;
-        border-left: 5px solid #ff126d;
-        z-index: -1;
-     }
+  .text-side .heading::before {
+    border-top: 10px solid #ff126d;
+    border-left: 10px solid #ff126d;
+    z-index: -1;
+  }
         
-      .text-side h2::after {
-        border-bottom: 5px solid #ff126d;
-        border-right: 5px solid #ff126d;
-        z-index: -1;
-        
-      }
+  .text-side .heading::after {
+    border-bottom: 10px solid #ff126d;
+    border-right: 10px solid #ff126d;
+    z-index: -1;   
+  }
   
-    .text-side .heading {
-      margin-top: 10px;
-      margin-left: 70px;
-    }
+  .text-side .heading {
+    margin-left: 70px;
+  }
   
-    .text-side .heading-description {
-      margin-left: 70px;
-      margin-top: 10px;
-      font-size: 18px;
-    }
+  .text-side .heading-description {
+    margin-left: 70px;
+    margin-top: 10px;
+    font-size: 20px;
+  }
   
-    .text-side .baner-btn {
-      margin-left: 80px;
-    }
+  .text-side .baner-btn {
+     margin-left: 80px;
+  }
   
-    .banar-side {
-      width: 100%;
-    }
+  .banar-side {
+    width: 100%;
+  }
   
-    .player {
-      margin-top: 40px;
-      width: 300px;
-      height: 350px;
-    }
+  .player {
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+    width: 400px;
+    height: 450px;
+  }
   
-    main {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-    }
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
   
-    .col-left {
-      margin-left: 30%;
+  .col-left {
+    margin-left: 10%;
   
-    }
+  }
   
-    .btn-field {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      background: transparent;
-      margin-left: -20px;
-    }
+  .btn-field {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background: transparent;
+  }
   
-    .col-right {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      margin-left: 10%;
-    }
+  .col-right {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 0px;
+  }
   
-    .col-right .cols {
-      border: 1px solid transparent;
-      margin-bottom: 10px;
-    }
-    .col-9{
-      display: none;
-    }
+  .col-right .cols {
+    border: 1px solid transparent;
+    margin-bottom: 10px;
+  }
+  .col-9{
+    display: none;
+  }
   
-    .col-right .cols:hover {
-      margin-top: 0px;
-      box-shadow: none;
-      border: 1px solid var(--primery-color);
-    }
-    .Extra-btn {
-      display: block;
-      text-align: center;
-        }
-    .Extra-btn a{
-      text-decoration: none;
-      padding: 10px 20px;
-      border: 1px solid var(--button-color);
-      background: var(--button-color);
-      color: var(--white-color);
-    }
+  .col-right .cols:hover {
+    margin-top: 0px;
+    box-shadow: none;
+    border: 1px solid var(--primery-color);
+  }
+  .Extra-btn {
+    display: block;
+    text-align: center;
+  }
+  .Extra-btn a{
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid va(--button-color);
+    background: va(--button-color);
+    color: var(--white-color);
+    border-radius: 10px;
+  }
   
-    footer {
-      height: 100vh;
-    }
+  footer {
+    height: 80vh;
+  }
   
   
-    footer h1 {
-      left: 37%;
-      top: 10%;
-    }
+  footer h1 {
+    left: 45%;
+    top: 10%;
+  }
   
-    footer hr {
-      width: 500px;
-      top: 20%;
-      left: 20%;
-    }
+  footer hr {
+    width: 500px;
+    top: 20%;
+    left: 20%;
+  }
   
-    footer .settings {
-      display: flex;
-      flex-direction: column;
-      top: 30%;
-    }
+  footer .settings {
+    display: flex;
+    flex-direction: column;
+    top: 30%;
+  }
   
-    footer .settings a {
-      text-decoration: none;
-      margin-top: 30px;
-      text-align: center;
-      margin-left: 130px;
-    }
+  footer .settings a {
+    text-decoration: none;
+    margin-top: 30px;
+    text-align: center;
+    margin-left: 140px;
+  }
   
-    footer .social-media {
-      position: absolute;
-      top: 90%;
-      left: 30%;
-    }
+  footer .social-media {
+    position: absolute;
+    top: 90%;
+    left: 30%;
+  }
 
 }
 /* ============< End Media Query For Tab Screen >============= */
