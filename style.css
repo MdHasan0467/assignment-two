@@ -313,6 +313,7 @@
   }
   
   .col-right .cols .reaction h2{
+    margin-top: 30px;
     font-size: 17px;
     cursor: pointer;
   }
