@@ -654,8 +654,8 @@
   .Extra-btn a{
     text-decoration: none;
     padding: 10px 20px;
-    border: 1px solid va(--button-color);
-    background: va(--button-color);
+    border: 1px solid var(--button-color);
+    background: var(--button-color);
     color: var(--white-color);
     border-radius: 10px;
   }
